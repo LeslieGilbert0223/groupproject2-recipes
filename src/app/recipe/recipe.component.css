@@ -1,0 +1,12 @@
+.recipe-card {
+  position: relative;
+  display: inline-block;
+  padding: 15px;
+}
+
+.fa-heart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: grey;
+}

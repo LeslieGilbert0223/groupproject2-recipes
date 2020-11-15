@@ -16,21 +16,16 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.route.queryParamMap.subscribe((response) => {
-    //   let queryParams = response;
-    //   let searchTerm = queryParams.get('term');
-    //   if (searchTerm === null) {
-    //     this.recipeData = '';
-    //   } else {
-    //     this.recipeService.getRecipes(searchTerm).subscribe((response: any) => {
-    //       this.recipeData = response;
-    //       console.log(response);
-    //     });
-    //   }
-    // });
-
-    this.recipeService.getRecipes('chicken').subscribe((response: any) => {
-      console.log(response);
+    this.route.queryParamMap.subscribe((response) => {
+      let queryParams = response;
+      let searchTerm = queryParams.get('term');
+      if (searchTerm === null) {
+        this.recipeData = null;
+      } else {
+        this.recipeService.getRecipes(searchTerm).subscribe((response: any) => {
+          this.recipeData = response;
+        });
+      }
     });
   }
 

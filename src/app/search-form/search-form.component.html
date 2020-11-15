@@ -1,6 +1,21 @@
-
 <form #searchForm="ngForm" (ngSubmit)="getSearchTerm(searchForm)">
-<label for="searchTerm">Search Recipies</label>
-<input type="text" name="searchTerm" id="searchTerm" ngModel>
-<button>Search</button>
+  <label for="searchTerm">Search Recipies</label>
+  <input type="text" name="searchTerm" id="searchTerm" ngModel />
+  <label for="mealType">Meal Type</label>
+  <select id="myList">
+    <option value="breakfast">Breakfast</option>
+    <option value="lunch">Lunch</option>
+    <option value="dinner">Dinner</option>
+    <option value="desserts">Desserts</option>
+    <option value="snacks">Snacks</option>
+  </select>
+  <!-- was brainstorming below how to best move forward with our next input for the health category -- search box may be best? Lets chat about it -->
+  <!-- <label for="dietaryRestrictions">Dietary Restictions</label>
+  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+  <label for="vehicle1"> I have a bike</label><br />
+  <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" />
+  <label for="vehicle2"> I have a car</label><br />
+  <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" />
+  <label for="vehicle3"> I have a boat</label><br /><br /> -->
+  <button>Search</button>
 </form>

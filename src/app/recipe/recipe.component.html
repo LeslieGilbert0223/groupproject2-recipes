@@ -1,6 +1,6 @@
 <div class="recipe-card">
-  <img src="{{ recipe.image }}" />
-  <i class="far fa-heart"></i>
-  <p>{{ recipe.label }}</p>
-  <a href="{{ recipe.url }}">View Recipe</a>
+  <img src="{{ recipeRef.image }}" />
+  <i class="far fa-heart" (click)="toggleFavorite(recipeRef)"></i>
+  <p>{{ recipeRef.label }}</p>
+  <a href="{{ recipeRef.url }}">View Recipe</a>
 </div>

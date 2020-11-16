@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Favorite } from '../interfaces/favorite';
 
 @Component({
   selector: 'app-recipe',
@@ -6,8 +7,18 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./recipe.component.css'],
 })
 export class RecipeComponent implements OnInit {
-  @Input() recipe: any;
+  @Input() recipeRef: any;
+  @Output() favoriteEvent = new EventEmitter<Favorite>();
   constructor() {}
 
   ngOnInit(): void {}
+
+  toggleFavorite = (recipe: any) => {
+    let favorite: Favorite = {
+      image: recipe.image,
+      label: recipe.label,
+      url: recipe.url,
+    };
+    this.favoriteEvent.emit(favorite);
+  };
 }

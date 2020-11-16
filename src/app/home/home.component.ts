@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Favorite } from '../interfaces/favorite';
 import { RecipeService } from '../recipe.service';
 
 @Component({
@@ -24,6 +25,7 @@ export class HomeComponent implements OnInit {
       } else {
         this.recipeService.getRecipes(searchTerm).subscribe((response: any) => {
           this.recipeData = response;
+          console.log(this.recipeData);
         });
       }
     });
@@ -37,5 +39,9 @@ export class HomeComponent implements OnInit {
         term: term,
       },
     });
+  };
+
+  toggleFavorite = (favorite: Favorite): void => {
+    this.recipeService.editFavorites(favorite);
   };
 }

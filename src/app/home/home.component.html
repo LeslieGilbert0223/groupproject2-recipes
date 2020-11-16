@@ -4,8 +4,9 @@
 
 <div class="recipe-results-container">
   <app-recipe
-    *ngFor="let recipe of recipeData?.hits"
-    [recipe]="recipe.recipe"
+    *ngFor="let item of recipeData?.hits"
+    [recipeRef]="item.recipe"
+    (favoriteEvent)="toggleFavorite($event)"
     class="search-results"
   >
   </app-recipe>

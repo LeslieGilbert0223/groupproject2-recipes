@@ -1,7 +1,7 @@
 .recipe-card {
   position: relative;
   display: inline-block;
-  padding: 15px;
+  margin: 15px;
 }
 
 .fa-heart {

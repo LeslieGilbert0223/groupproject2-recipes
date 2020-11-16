@@ -15,4 +15,13 @@ export class FavoritesComponent implements OnInit {
     this.favorites = this.recipeService.getFavorites();
     console.log(this.favorites);
   }
+
+  getFavorites = () => {
+    this.favorites = this.recipeService.getFavorites();
+  };
+
+  removeFavorite = (recipe: Favorite): void => {
+    this.recipeService.editFavorites(recipe);
+    this.getFavorites();
+  };
 }

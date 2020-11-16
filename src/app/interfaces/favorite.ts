@@ -1,2 +1,1 @@
-export interface Favorite {
-}
+export interface Favorite {}

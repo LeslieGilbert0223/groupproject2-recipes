@@ -10,6 +10,7 @@ import { RecipeService } from '../recipe.service';
 })
 export class HomeComponent implements OnInit {
   recipeData: any;
+  favorites: Favorite[] = [];
   constructor(
     private recipeService: RecipeService,
     private router: Router,
@@ -17,6 +18,8 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.favorites = this.recipeService.getFavorites();
+
     this.route.queryParamMap.subscribe((response) => {
       let queryParams = response;
       let searchTerm = queryParams.get('term');
@@ -25,6 +28,8 @@ export class HomeComponent implements OnInit {
       } else {
         this.recipeService.getRecipes(searchTerm).subscribe((response: any) => {
           this.recipeData = response;
+
+          this.setFavorites(this.favorites, this.recipeData);
           console.log(this.recipeData);
         });
       }
@@ -32,6 +37,10 @@ export class HomeComponent implements OnInit {
   }
 
   // below are methods
+
+  getFavorites = () => {
+    this.favorites = this.recipeService.getFavorites();
+  };
 
   search = (term: string) => {
     this.router.navigate(['/home'], {
@@ -41,7 +50,21 @@ export class HomeComponent implements OnInit {
     });
   };
 
-  toggleFavorite = (favorite: Favorite): void => {
+  editFavorites = (favorite: Favorite): void => {
+    console.log(favorite);
     this.recipeService.editFavorites(favorite);
+    this.getFavorites();
+    this.setFavorites(this.favorites, this.recipeData);
+  };
+
+  setFavorites = (favorites: Favorite[], original: any) => {
+    original.hits.forEach((item: any) => {
+      let booleanValue = favorites.some((favorite) => {
+        return favorite.url === item.recipe.url;
+      });
+      if (booleanValue) {
+        item.recipe.isFavorite = true;
+      }
+    });
   };
 }

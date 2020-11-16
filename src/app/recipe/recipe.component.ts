@@ -8,6 +8,7 @@ import { Favorite } from '../interfaces/favorite';
 })
 export class RecipeComponent implements OnInit {
   @Input() recipeRef: any;
+
   @Output() favoriteEvent = new EventEmitter<Favorite>();
   constructor() {}
 
@@ -18,6 +19,7 @@ export class RecipeComponent implements OnInit {
       image: recipe.image,
       label: recipe.label,
       url: recipe.url,
+      isFavorite: false,
     };
     this.favoriteEvent.emit(favorite);
   };

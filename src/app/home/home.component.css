@@ -1,0 +1,13 @@
+.search-results {
+  /* display: flex; */
+  /* flex-direction: row;
+  flex-wrap: wrap; */
+  margin-top: 150px;
+}
+
+.recipe-results-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}

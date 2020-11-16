@@ -2,5 +2,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: lightgrey;
+  background-color: #d81159;
+  color: #fff;
+  height: 70px;
+  width: 100%;
+  /* padding: 0 20px; */
+}
+
+.links {
+  text-decoration: none;
+  color: #fff;
+  margin: 20px;
 }

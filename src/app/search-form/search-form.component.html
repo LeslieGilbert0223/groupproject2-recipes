@@ -1,7 +1,22 @@
-<form #searchForm="ngForm" (ngSubmit)="getSearchTerm(searchForm)">
-  <label for="searchTerm">Search Recipies</label>
-  <input type="text" name="searchTerm" id="searchTerm" ngModel />
-  <label for="mealType">Meal Type</label>
+<form
+  class="search-form"
+  #searchForm="ngForm"
+  (ngSubmit)="getSearchTerm(searchForm)"
+>
+  <img
+    src="/assets/food-cooking-background.jpg"
+    alt="Food cutting board image"
+    class="form-background-img"
+  />
+  <label for="searchTerm" class="search-term-header">Search Recipes</label>
+  <input
+    type="text"
+    name="searchTerm"
+    id="searchTerm"
+    placeholder="chicken"
+    ngModel
+  />
+  <label for="mealType" class="meal-type-header">Meal Type</label>
   <select id="myList">
     <option value="breakfast">Breakfast</option>
     <option value="lunch">Lunch</option>
@@ -17,5 +32,5 @@
   <label for="vehicle2"> I have a car</label><br />
   <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" />
   <label for="vehicle3"> I have a boat</label><br /><br /> -->
-  <button>Search</button>
+  <button class="search-button">Search</button>
 </form>

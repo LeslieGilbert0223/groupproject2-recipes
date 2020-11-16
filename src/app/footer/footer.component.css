@@ -1,7 +1,12 @@
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: grey;
+  height: 40px;
+  background-color: #ffbc42;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

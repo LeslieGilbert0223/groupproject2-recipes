@@ -9,7 +9,7 @@ export class RecipeService {
   key: string = '41259a47bdb8c697e9e9a60c0f6596f9';
   id: string = '5992111c';
   constructor(private http: HttpClient) {}
-  //heavy lifiting goes on here
+  //heavy lifting goes on here
 
   getRecipes = (searchTerm: string): any => {
     return this.http.get(this.recipeBaseUrl, {

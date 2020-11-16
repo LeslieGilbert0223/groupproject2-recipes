@@ -1,5 +1,14 @@
 <app-header></app-header>
+
 <app-search-form (submitEvent)="search($event)"></app-search-form>
-<app-recipe *ngFor="let recipe of recipeData?.hits" [recipe]="recipe.recipe">
-</app-recipe>
+
+<div class="recipe-results-container">
+  <app-recipe
+    *ngFor="let recipe of recipeData?.hits"
+    [recipe]="recipe.recipe"
+    class="search-results"
+  >
+  </app-recipe>
+</div>
+
 <app-footer></app-footer>

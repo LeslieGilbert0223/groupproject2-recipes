@@ -23,11 +23,12 @@ export class HomeComponent implements OnInit {
     this.route.queryParamMap.subscribe((queryParams) => {
       const searchTerm = queryParams.get('term');
       const diet = queryParams.get('diet');
+      const health = queryParams.get('health');
       if (searchTerm === null) {
         this.recipeData = null;
       } else {
         this.recipeService
-          .getRecipes(searchTerm, diet)
+          .getRecipes(searchTerm, diet, health)
           .subscribe((response: any) => {
             this.recipeData = response;
 
@@ -49,6 +50,7 @@ export class HomeComponent implements OnInit {
       queryParams: {
         term: searchForm.searchTerm,
         diet: searchForm.diet,
+        health: searchForm.healthLabels,
       },
     });
   };

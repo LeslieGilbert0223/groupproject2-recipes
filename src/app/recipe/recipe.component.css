@@ -13,3 +13,7 @@
 .favorite {
   color: red;
 }
+
+.hide {
+  display: none;
+}

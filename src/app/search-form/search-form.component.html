@@ -26,28 +26,17 @@
   <!-- was brainstorming below how to best move forward with our next input for the health category -- search box may be best? Lets chat about it -->
   <label for="health">Dietary Restrictions</label>
 
-  <label for="default">None</label><br /><br />
-  <input type="checkbox" id="default" name="default" ngModel />
+  <label for="vegan">Vegan</label>
+  <input type="checkbox" id="vegan" (click)="toggleHealth('vegan')" />
 
-  <label for="vegan">Vegan</label><br />
-  <input type="checkbox" id="vegan" name="health" value="vegan" ngModel />
+  <label for="vegetarian">Vegetarian</label>
+  <input type="checkbox" id="vegetarian" (click)="toggleHealth('vegetarian')" />
 
-  <label for="vegetarian">Vegetarian</label><br />
-  <input
-    type="checkbox"
-    id="vegetarian"
-    name="health"
-    value="vegetarian"
-    ngModel
-  />
-
-  <label for="sugar-conscious">Sugar Conscious</label><br /><br />
+  <label for="sugar-conscious">Sugar Conscious</label>
   <input
     type="checkbox"
     id="sugar-conscious"
-    name="health"
-    value="sugar-conscious"
-    ngModel
+    (click)="toggleHealth('sugar-conscious')"
   />
 
   <button class="search-button">Search</button>

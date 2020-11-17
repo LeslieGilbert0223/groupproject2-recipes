@@ -13,13 +13,17 @@ export class RecipeService {
   constructor(private http: HttpClient) {}
   //heavy lifting goes on here
 
-  getRecipes = (searchTerm: string): any => {
-    return this.http.get(this.recipeBaseUrl, {
-      params: {
+  getRecipes = (searchTerm: string, diet: string | null): any => {
+    const params = Object.assign(
+      {
         app_key: this.key,
         app_id: this.id,
         q: searchTerm,
       },
+      !diet ? undefined : { diet }
+    );
+    return this.http.get(this.recipeBaseUrl, {
+      params,
     });
   };
 

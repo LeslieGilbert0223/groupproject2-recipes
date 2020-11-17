@@ -1,7 +1,7 @@
 <form
   class="search-form"
   #searchForm="ngForm"
-  (ngSubmit)="getSearchTerm(searchForm)"
+  (ngSubmit)="submitForm(searchForm)"
 >
   <img
     src="/assets/food-cooking-background.jpg"
@@ -16,14 +16,12 @@
     placeholder="what are you looking for?"
     ngModel
   />
-  <label for="mealType" class="meal-type-header">Meal Type</label>
-  <select id="myList">
-    <option value="any">Any</option>
-    <option value="breakfast">Breakfast</option>
-    <option value="lunch">Lunch</option>
-    <option value="dinner">Dinner</option>
-    <option value="desserts">Desserts</option>
-    <option value="snacks">Snacks</option>
+  <label for="diet" class="diet-header">Diet</label>
+  <select id="diet" name="diet" ngModel>
+    <option value="balanced">Balance</option>
+    <option value="high-protein">High Protein</option>
+    <option value="low-fat">Low Fat</option>
+    <option value="low-carb">Low Carb</option>
   </select>
   <!-- was brainstorming below how to best move forward with our next input for the health category -- search box may be best? Lets chat about it -->
   <!-- <label for="dietaryRestrictions">Dietary Restictions</label>

@@ -11,3 +11,6 @@
   align-content: center;
   flex-wrap: wrap;
 }
+.none {
+  display: none;
+}

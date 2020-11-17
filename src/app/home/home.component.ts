@@ -12,6 +12,7 @@ import { RecipeService } from '../recipe.service';
 export class HomeComponent implements OnInit {
   recipeData: any;
   favorites: Favorite[] = [];
+  showIndex: number = -1;
   constructor(
     private recipeService: RecipeService,
     private router: Router,
@@ -61,5 +62,9 @@ export class HomeComponent implements OnInit {
         item.recipe.isFavorite = true;
       }
     });
+  };
+
+  setShowIndex = (index: number) => {
+    this.showIndex = index;
   };
 }

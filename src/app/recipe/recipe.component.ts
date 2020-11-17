@@ -8,7 +8,7 @@ import { Favorite } from '../interfaces/favorite';
 })
 export class RecipeComponent implements OnInit {
   @Input() recipeRef: any;
-
+  @Output() popupEvent = new EventEmitter<void>();
   @Output() favoriteEvent = new EventEmitter<Favorite>();
   constructor() {}
 
@@ -26,7 +26,7 @@ export class RecipeComponent implements OnInit {
     this.favoriteEvent.emit(favorite);
   };
 
-  // toggleRecipeInfo () {
-  //   this.isShow = !
-  // }
+  showPopup = () => {
+    this.popupEvent.emit();
+  };
 } // End of export

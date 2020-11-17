@@ -13,5 +13,5 @@
   </app-recipe>
 
 </div>
-<app-recipe-popup *ngFor="let item of recipeData?.hits; index as i" [ngClass]="{'none': showIndex !== i }" [hit]="item.recipe" ></app-recipe-popup>
+<app-recipe-popup *ngFor="let item of recipeData?.hits; index as i" [ngClass]="{'none': showIndex !== i }" [hit]="item.recipe" (closeEvent)="removeShowIndex()" ></app-recipe-popup>
 <app-footer></app-footer>

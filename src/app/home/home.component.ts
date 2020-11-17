@@ -67,4 +67,8 @@ export class HomeComponent implements OnInit {
   setShowIndex = (index: number) => {
     this.showIndex = index;
   };
+
+  removeShowIndex = () => {
+    this.showIndex = -1;
+  };
 }

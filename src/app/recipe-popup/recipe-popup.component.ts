@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-recipe-popup',
@@ -7,7 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RecipePopupComponent implements OnInit {
   @Input() hit: any;
+  @Output() closeEvent = new EventEmitter<void>();
   constructor() {}
 
   ngOnInit(): void {}
+
+  closePopup = () => {
+    this.closeEvent.emit();
+  };
 }

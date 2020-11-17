@@ -14,9 +14,12 @@ export class SearchFormComponent implements OnInit {
   ngOnInit(): void {}
 
   submitForm = (form: NgForm): void => {
-    this.submitEvent.emit({
-      searchTerm: form.value.searchTerm,
-      diet: form.value.diet,
-    });
+    console.log(form.value);
+
+    // this.submitEvent.emit({
+    //   searchTerm: form.value.searchTerm,
+    //   diet: form.value.diet,
+    //   healthLabels: form.value.health,
+    // });
   };
 }

@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
     this.route.queryParamMap.subscribe((queryParams) => {
       const searchTerm = queryParams.get('term');
       const diet = queryParams.get('diet');
-      const health = queryParams.get('health');
+      const health = queryParams.getAll('health');
       if (searchTerm === null) {
         this.recipeData = null;
       } else {
@@ -43,16 +43,6 @@ export class HomeComponent implements OnInit {
 
   getFavorites = () => {
     this.favorites = this.recipeService.getFavorites();
-  };
-
-  search = (searchForm: SearchForm) => {
-    this.router.navigate(['/home'], {
-      queryParams: {
-        term: searchForm.searchTerm,
-        diet: searchForm.diet,
-        health: searchForm.healthLabels,
-      },
-    });
   };
 
   editFavorites = (favorite: Favorite): void => {

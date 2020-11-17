@@ -16,20 +16,18 @@ export class RecipeService {
   getRecipes = (
     searchTerm: string,
     diet: string | null,
-    health: string | null
+    health: string[]
   ): any => {
-    const params = Object.assign(
-      {
-        app_key: this.key,
-        app_id: this.id,
-        q: searchTerm,
-      },
-      !diet ? undefined : { diet },
-      !health ? undefined : { health }
-      // health, {health}
-    );
+    let params: any = {
+      app_key: this.key,
+      app_id: this.id,
+      q: searchTerm,
+      diet: diet,
+      health: health,
+    };
+
     return this.http.get(this.recipeBaseUrl, {
-      params,
+      params: params,
     });
   };
 

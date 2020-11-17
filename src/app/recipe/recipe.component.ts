@@ -12,6 +12,8 @@ export class RecipeComponent implements OnInit {
   @Output() favoriteEvent = new EventEmitter<Favorite>();
   constructor() {}
 
+  // isShow = false;
+
   ngOnInit(): void {}
 
   toggleFavorite = (recipe: any) => {
@@ -23,4 +25,8 @@ export class RecipeComponent implements OnInit {
     };
     this.favoriteEvent.emit(favorite);
   };
-}
+
+  // toggleRecipeInfo () {
+  //   this.isShow = !
+  // }
+} // End of export

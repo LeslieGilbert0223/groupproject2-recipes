@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Favorite } from '../interfaces/favorite';
+import { SearchForm } from '../interfaces/search-form';
 import { RecipeService } from '../recipe.service';
 
 @Component({
@@ -19,19 +20,20 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.favorites = this.recipeService.getFavorites();
-
-    this.route.queryParamMap.subscribe((response) => {
-      let queryParams = response;
-      let searchTerm = queryParams.get('term');
+    this.route.queryParamMap.subscribe((queryParams) => {
+      const searchTerm = queryParams.get('term');
+      const diet = queryParams.get('diet');
       if (searchTerm === null) {
         this.recipeData = null;
       } else {
-        this.recipeService.getRecipes(searchTerm).subscribe((response: any) => {
-          this.recipeData = response;
+        this.recipeService
+          .getRecipes(searchTerm, diet)
+          .subscribe((response: any) => {
+            this.recipeData = response;
 
-          this.setFavorites(this.favorites, this.recipeData);
-          console.log(this.recipeData);
-        });
+            this.setFavorites(this.favorites, this.recipeData);
+            console.log(this.recipeData);
+          });
       }
     });
   }
@@ -42,10 +44,11 @@ export class HomeComponent implements OnInit {
     this.favorites = this.recipeService.getFavorites();
   };
 
-  search = (term: string) => {
+  search = (searchForm: SearchForm) => {
     this.router.navigate(['/home'], {
       queryParams: {
-        term: term,
+        term: searchForm.searchTerm,
+        diet: searchForm.diet,
       },
     });
   };

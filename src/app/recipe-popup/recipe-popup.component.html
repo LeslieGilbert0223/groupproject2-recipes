@@ -1,13 +1,17 @@
 <div class="popup-container">
   <div class="pop-up">
     <h1 class="recipe-label">{{ hit.label }}</h1>
-    <ol class="ingredient-list">
+    <p class="ingredient-heading">Ingredients you'll need...</p>
+    <ul class="ingredient-list">
       <li *ngFor="let ingredient of hit.ingredientLines">
         <p>{{ ingredient }}</p>
       </li>
-    </ol>
-    <div>
-      <button class="close-button" (click)="closePopup()">Close me</button>
+
+    </ul>
+   
+    <div class="button-container">
+      <button class="close-button" (click)="closePopup()">Close</button>
+
     </div>
   </div>
 </div>

@@ -4,7 +4,7 @@
   align-items: center;
   background-color: #d81159;
   color: #fff;
-  height: 70px;
+  height: 100px;
   width: 100%;
   /* padding: 0 20px; */
 }
@@ -13,4 +13,8 @@
   text-decoration: none;
   color: #fff;
   margin: 20px;
+}
+
+.recipe-logo {
+  width: 100px;
 }

@@ -10,13 +10,46 @@
   align-items: center;
 }
 .pop-up {
+  border: 5px solid #ffbc42;
+  margin: 20px;
   background-color: white;
   height: 400px;
   width: 350px;
   border-radius: 15px;
   padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .recipe-label {
+  text-decoration: underline;
+}
+
+.ingredient-heading {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.ingredient-list {
+  overflow: auto;
+}
+
+.button-container {
+  margin-top: 7px;
+}
+
+.close-button {
   text-align: center;
+  width: 150px;
+  height: 30px;
+  background-color: #d81159;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+  border: none;
+  color: #fff;
+}
+.close-button:hover {
+  cursor: pointer;
 }

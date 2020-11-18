@@ -1,24 +1,40 @@
 .recipe-card {
   position: relative;
   display: inline-block;
-  padding: 15px;
-  width: 320px;
+  /* padding: 5px; */
+  width: 299px;
+  border: lightgrey 1px solid;
+  margin: 15px;
+  border-radius: 15px;
+}
+.recipe-image {
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  cursor: pointer;
+}
+.recipe-card:hover {
+  box-shadow: 5px 5px 5px 2px rgba(50, 50, 50, 0.75);
 }
 
 .recipe-label {
   word-wrap: none;
+  padding: 7px;
+  padding-right: 15px;
 }
 
+.link {
+  text-decoration: none;
+  color: grey;
+}
+
+.link:hover {
+  color: darkgrey;
+}
 .fa-heart {
   position: absolute;
-  top: 0;
-  right: 0;
+  right: 5px;
   color: grey;
 }
 .favorite {
   color: red;
-}
-
-.hide {
-  display: none;
 }

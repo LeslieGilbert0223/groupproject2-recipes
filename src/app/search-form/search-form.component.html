@@ -1,43 +1,49 @@
-<form
-  class="search-form"
-  #searchForm="ngForm"
-  (ngSubmit)="submitForm(searchForm)"
->
-  <img
-    src="/assets/food-cooking-background.jpg"
-    alt="Food cutting board image"
-    class="form-background-img"
-  />
-  <label for="searchTerm" class="search-term-header">Search Recipes</label>
-  <input
-    type="text"
-    name="searchTerm"
-    id="searchTerm"
-    placeholder="what are you looking for?"
-    ngModel
-  />
-  <label for="diet" class="diet-header">Diet</label>
-  <select id="diet" name="diet" ngModel>
-    <option value="balanced">Balance</option>
-    <option value="high-protein">High Protein</option>
-    <option value="low-fat">Low Fat</option>
-    <option value="low-carb">Low Carb</option>
-  </select>
-  <!-- was brainstorming below how to best move forward with our next input for the health category -- search box may be best? Lets chat about it -->
-  <label for="health">Dietary Restrictions</label>
+<div class="form-container">
+  <form
+    class="search-form"
+    #searchForm="ngForm"
+    (ngSubmit)="submitForm(searchForm)"
+  >
+    <img
+      src="/assets/food-cooking-background.jpg"
+      alt="Food cutting board image"
+      class="form-background-img"
+    />
+    <label for="searchTerm" class="search-term-header">Search Recipes</label>
+    <input
+      type="text"
+      name="searchTerm"
+      id="searchTerm"
+      placeholder="what are you looking for?"
+      ngModel
+    />
+    <label for="diet" class="diet-header">Diet</label>
+    <select id="diet" name="diet" ngModel>
+      <option value="balanced">Balance</option>
+      <option value="high-protein">High Protein</option>
+      <option value="low-fat">Low Fat</option>
+      <option value="low-carb">Low Carb</option>
+    </select>
+    <label for="health" class="health-header">Dietary Restrictions</label>
+    <div class="health-options">
+      <label for="vegan">Vegan</label>
+      <input type="checkbox" id="vegan" (click)="toggleHealth('vegan')" />
 
-  <label for="vegan">Vegan</label>
-  <input type="checkbox" id="vegan" (click)="toggleHealth('vegan')" />
+      <label for="vegetarian">Vegetarian</label>
+      <input
+        type="checkbox"
+        id="vegetarian"
+        (click)="toggleHealth('vegetarian')"
+      />
 
-  <label for="vegetarian">Vegetarian</label>
-  <input type="checkbox" id="vegetarian" (click)="toggleHealth('vegetarian')" />
+      <label for="sugar-conscious">Sugar Conscious</label>
+      <input
+        type="checkbox"
+        id="sugar-conscious"
+        (click)="toggleHealth('sugar-conscious')"
+      />
+    </div>
 
-  <label for="sugar-conscious">Sugar Conscious</label>
-  <input
-    type="checkbox"
-    id="sugar-conscious"
-    (click)="toggleHealth('sugar-conscious')"
-  />
-
-  <button class="search-button">Search</button>
-</form>
+    <button class="search-button">Search</button>
+  </form>
+</div>

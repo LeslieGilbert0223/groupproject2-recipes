@@ -10,6 +10,7 @@ export class RecipeService {
   key: string = '41259a47bdb8c697e9e9a60c0f6596f9';
   id: string = '5992111c';
   favorites: Favorite[] = [];
+  to: number = 30;
   constructor(private http: HttpClient) {}
   //heavy lifting goes on here
 
@@ -22,6 +23,7 @@ export class RecipeService {
       app_key: this.key,
       app_id: this.id,
       q: searchTerm,
+      to: this.to,
       diet: diet,
       health: health,
     };

@@ -1,11 +1,12 @@
 <div class="recipe-card">
-  <img (click)="showPopup()" src="{{ recipeRef.image }}" />
+  <img class="recipe-image" (click)="showPopup()" src="{{ recipeRef.image }}" />
   <i
     class="far fa-heart"
     (click)="toggleFavorite(recipeRef)"
     [ngClass]="{ favorite: recipeRef.isFavorite }"
   ></i>
-  <p class="recipe-label">{{ recipeRef.label }}</p>
-  <a href="{{ recipeRef.url }}">View Original Recipe</a>
-
+  <div class="recipe-label">
+    <p>{{ recipeRef.label }}</p>
+    <a class="link" href="{{ recipeRef.url }}">View Original Recipe</a>
+  </div>
 </div>

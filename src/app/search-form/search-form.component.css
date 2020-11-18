@@ -22,6 +22,17 @@
   margin: 5px;
   height: 30px;
   width: 400px;
+  border: 1px grey solid;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#diet {
+  border: 1px grey solid;
+  border-radius: 5px;
+}
+.checkbox {
+  border: none;
 }
 
 .diet-header,
@@ -40,10 +51,19 @@
   margin-top: 30px;
   background-color: #d81159;
   color: #fff;
-  width: 80%;
-  height: 60px;
+  width: 60%;
+  height: 50px;
   font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
 }
+
+.search-button:hover {
+  /* background-color: #ad0e40; */
+  box-shadow: 5px 5px 5px 2px rgba(50, 50, 50, 0.75);
+}
+
 .form-background-img {
   width: 100%;
   height: 100%;

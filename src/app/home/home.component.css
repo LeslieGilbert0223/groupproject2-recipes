@@ -1,8 +1,5 @@
 .search-results {
-  /* display: flex; */
-  /* flex-direction: row;
-  flex-wrap: wrap; */
-  margin-top: 150px;
+  margin-top: 15px;
 }
 
 .recipe-results-container {

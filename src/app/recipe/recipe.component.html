@@ -5,7 +5,7 @@
     (click)="toggleFavorite(recipeRef)"
     [ngClass]="{ favorite: recipeRef.isFavorite }"
   ></i>
-  <p>{{ recipeRef.label }}</p>
+  <p class="recipe-label">{{ recipeRef.label }}</p>
   <a href="{{ recipeRef.url }}">View Original Recipe</a>
 
 </div>

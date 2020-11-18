@@ -1,10 +1,14 @@
 <div class="popup-container">
-    <div class="pop-up">
-    <h1>Here are the ingredients of your dish</h1>
-    <p>{{hit.label}}</p>
+  <div class="pop-up">
+    <h1 class="recipe-label">{{ hit.label }}</h1>
+    <ol class="ingredient-list">
+      <li>
+        {{ hit.ingredientLines }}
+      </li>
+    </ol>
+    <!-- <a href="{{ hits.url }}">View Original Recipe</a> -->
     <div>
-        <button (click)="closePopup()">Close me</button>
+      <button class="close-button" (click)="closePopup()">Close me</button>
     </div>
-    </div>
+  </div>
 </div>
- 

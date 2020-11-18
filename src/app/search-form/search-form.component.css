@@ -60,7 +60,7 @@
 }
 
 .search-button:hover {
-  /* background-color: #ad0e40; */
+  cursor: pointer;
   box-shadow: 5px 5px 5px 2px rgba(50, 50, 50, 0.75);
 }
 

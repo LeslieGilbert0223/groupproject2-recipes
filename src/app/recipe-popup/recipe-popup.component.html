@@ -2,8 +2,8 @@
   <div class="pop-up">
     <h1 class="recipe-label">{{ hit.label }}</h1>
     <ol class="ingredient-list">
-      <li>
-        {{ hit.ingredientLines }}
+      <li *ngFor="let ingredient of hit.ingredientLines">
+        <p>{{ ingredient }}</p>
       </li>
     </ol>
     <!-- <a href="{{ hits.url }}">View Original Recipe</a> -->

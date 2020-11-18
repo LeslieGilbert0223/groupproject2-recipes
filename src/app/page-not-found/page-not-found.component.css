@@ -1,0 +1,11 @@
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.image-404 {
+  display: flex;
+  width: 150%;
+}

@@ -26,23 +26,27 @@
     </select>
     <label for="health" class="health-header">Dietary Restrictions</label>
     <div class="health-options">
-      <label for="vegan">Vegan</label>
-      <input type="checkbox" id="vegan" (click)="toggleHealth('vegan')" />
-
-      <label for="vegetarian">Vegetarian</label>
-      <input
-        class="checkbox"
-        type="checkbox"
-        id="vegetarian"
-        (click)="toggleHealth('vegetarian')"
-      />
-
-      <label for="sugar-conscious">Sugar Conscious</label>
-      <input
-        type="checkbox"
-        id="sugar-conscious"
-        (click)="toggleHealth('sugar-conscious')"
-      />
+      <div>
+        <input type="checkbox" id="vegan" (click)="toggleHealth('vegan')" />
+        <label for="vegan">Vegan</label>
+      </div>
+      <div>
+        <input
+          class="checkbox"
+          type="checkbox"
+          id="vegetarian"
+          (click)="toggleHealth('vegetarian')"
+        />
+        <label for="vegetarian">Vegetarian</label>
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          id="sugar-conscious"
+          (click)="toggleHealth('sugar-conscious')"
+        />
+        <label for="sugar-conscious">Sugar Conscious</label>
+      </div>
     </div>
 
     <button class="search-button">Search</button>

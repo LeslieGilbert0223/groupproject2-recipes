@@ -41,7 +41,10 @@
   margin: 30px 0px 5px 0px;
   font-family: "Satisfy", cursive;
 }
-
+.health-options {
+  display: flex;
+  flex-direction: column;
+}
 #myList {
   width: 50%;
   height: 30px;
@@ -74,4 +77,11 @@
   top: 0;
   opacity: 0.6;
   z-index: -1;
+}
+
+@media only screen and (min-width: 768px) {
+  .health-options {
+    display: flex;
+    flex-direction: row;
+  }
 }
